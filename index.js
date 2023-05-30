@@ -15,13 +15,14 @@ var {SerialPort, ReadlineParser} = require("serialport");
 app.use(express.static(__dirname));
 
 const port = process.env.PORT || 3000;
+const kvmIP = process.env.kvmIP || '1.1.1.1';
 app.listen(port, () => console.log('Running on port: ' + port));
 
 
 
 let tel = new Telnet()
 let params = {
-    host: '192.168.1.175',
+    host: kvmIP,
     port: 4001,
     negotiationMandatory: false,
     timeout: 1500
