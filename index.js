@@ -16,7 +16,11 @@ app.use(express.static(__dirname));
 
 const port = process.env.PORT || 3000;
 const kvmIP = process.env.kvmIP || '1.1.1.1';
+
+console.log('Listen Port: ' + port);
+console.log('KVM IP: ' + kvmIP);
 app.listen(port, () => console.log('Running on port: ' + port));
+
 
 
 
